@@ -1,0 +1,1 @@
+smo_semesterratt: =If(IsBlank(smo_fodelsear), Blank(), (Year(UTCToday()) - smo_fodelsear) >= 50, 32, (Year(UTCToday()) - smo_fodelsear) >= 40, 31, 25)

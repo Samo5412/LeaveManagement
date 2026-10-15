@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="LeaveManagement.Plugins.ValidateLeaveRequest: Update of smo_semesteransokan" SdkMessageProcessingStepId="{5734e028-a5c7-f111-a05c-70a8a507ace5}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>LeaveManagement.Plugins.ValidateLeaveRequest, LeaveManagement.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b78831d349c485c</PluginTypeName>
+  <PluginTypeId>a7f6e80d-0f4b-4054-8631-f089f80d64cc</PluginTypeId>
+  <PrimaryEntity>smo_semesteransokan</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>LeaveManagement.Plugins.ValidateLeaveRequest: Update of smo_semesteransokan</Description>
+  <FilteringAttributes>smo_slutdatum,smo_startdatum</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{869a64b7-abc7-f111-a05c-70a8a507ace5}</SdkMessageProcessingStepImageId>
+      <Attributes>smo_slutdatum,smo_startdatum</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

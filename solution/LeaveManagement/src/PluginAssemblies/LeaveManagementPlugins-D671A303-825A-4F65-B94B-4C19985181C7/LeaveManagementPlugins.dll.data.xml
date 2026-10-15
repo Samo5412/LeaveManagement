@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="LeaveManagement.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b78831d349c485c" PluginAssemblyId="d671a303-825a-4f65-b94b-4c19985181c7" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/LeaveManagementPlugins-D671A303-825A-4F65-B94B-4C19985181C7/LeaveManagementPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="LeaveManagement.Plugins.ValidateLeaveRequest, LeaveManagement.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b78831d349c485c" PluginTypeId="a7f6e80d-0f4b-4054-8631-f089f80d64cc" Name="LeaveManagement.Plugins.ValidateLeaveRequest">
+      <FriendlyName>5ea3df08-90b3-4999-b9bc-cb3bf2e44ade</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

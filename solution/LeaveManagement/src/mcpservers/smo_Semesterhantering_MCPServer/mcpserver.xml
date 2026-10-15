@@ -1,0 +1,10 @@
+<mcpserver name="smo_Semesterhantering_MCPServer">
+  <description>MCP Server for app Semesterhantering</description>
+  <displayname>Semesterhantering MCP Server</displayname>
+  <iscustom>0</iscustom>
+  <iscustomizable>1</iscustomizable>
+  <isremote>0</isremote>
+  <serverurl>https://agent365.svc.cloud.microsoft/mcp/environments/608915ca-bdd1-e6a0-aa75-2a8636599a59/servers/smo_Semesterhantering_MCPServer</serverurl>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</mcpserver>

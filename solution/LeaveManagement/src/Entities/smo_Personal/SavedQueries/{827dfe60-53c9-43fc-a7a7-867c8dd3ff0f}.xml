@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{827dfe60-53c9-43fc-a7a7-867c8dd3ff0f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="smo_namn" select="1" icon="1" preview="1">
+        <row name="result" id="smo_personalid">
+          <cell name="smo_namn" width="300" />
+          <cell name="smo_epost" width="150" />
+          <cell name="smo_chef" width="150" />
+          <cell name="smo_ersattare" width="150" />
+          <cell name="smo_tillganglig" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="smo_personal">
+          <attribute name="smo_personalid" />
+          <attribute name="smo_namn" />
+          <attribute name="createdon" />
+          <order attribute="smo_namn" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="smo_epost" />
+          <attribute name="smo_chef" />
+          <attribute name="smo_ersattare" />
+          <attribute name="smo_tillganglig" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Personals" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

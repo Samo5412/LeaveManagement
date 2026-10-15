@@ -1,0 +1,520 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "smo_sharedcommondataserviceforapps_68ad5"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_approvals": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "smo_sharedapprovals_bd975"
+        },
+        "api": {
+          "name": "shared_approvals"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "smo_sharedoffice365_3592d"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Semester-Administratörens e-post (smo_SemesterAdministratrensepost)": {
+          "defaultValue": "sara.m@02wrt.onmicrosoft.com",
+          "type": "String",
+          "metadata": {
+            "schemaName": "smo_SemesterAdministratrensepost"
+          }
+        }
+      },
+      "staticResults": {
+        "Hämta_sökande0": {
+          "status": "Failed",
+          "code": "TestFailure",
+          "error": {
+            "code": "InternalServerError",
+            "message": "Simulerat fel för att testa Catch"
+          }
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "6fb9354d-c8d2-46ca-9c5b-6ac5cc8a745e"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "smo_semesteransokan",
+              "subscriptionRequest/scope": 4
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        }
+      },
+      "actions": {
+        "varApproverEmail": {
+          "runAfter": {
+            "varApproverId": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f829a53b-efcc-4d13-8408-3cd7f554afa5"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varApproverEmail",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "varApproverId": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "d266f790-0351-42ab-a2b4-16681d6a51bb"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varApproverId",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Try": {
+          "actions": {
+            "Har_sökande_en_chef": {
+              "actions": {
+                "Hämta_chef": {
+                  "metadata": {
+                    "operationMetadataId": "08755598-58a2-499d-8b52-8b553d21c832"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "smo_personals",
+                      "recordId": "@outputs('Hämta_sökande')?['body/_smo_chef_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Är_chefen_tillgänglig": {
+                  "actions": {
+                    "Set_ApproverId": {
+                      "metadata": {
+                        "operationMetadataId": "821e02bb-195c-4dc5-98ec-99a1d6b864cb"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "varApproverId",
+                        "value": "@outputs('Hämta_chef')?['body/smo_personalid']"
+                      }
+                    },
+                    "Set_ApproverEmail": {
+                      "runAfter": {
+                        "Set_ApproverId": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "12c1d27d-94d0-4ef8-a173-09dfb5f59733"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "varApproverEmail",
+                        "value": "@outputs('Hämta_chef')?['body/smo_epost']"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Hämta_chef": [
+                      "Succeeded"
+                    ]
+                  },
+                  "else": {
+                    "actions": {
+                      "Har_chefen_en_ersättare": {
+                        "actions": {
+                          "Hämta_ersättare": {
+                            "metadata": {
+                              "operationMetadataId": "5136ef54-57f3-4d40-941f-a3d108ba8fab"
+                            },
+                            "type": "OpenApiConnection",
+                            "inputs": {
+                              "parameters": {
+                                "entityName": "smo_personals",
+                                "recordId": "@outputs('Hämta_chef')?['body/_smo_ersattare_value']"
+                              },
+                              "host": {
+                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                                "operationId": "GetItem",
+                                "connectionName": "shared_commondataserviceforapps"
+                              }
+                            }
+                          },
+                          "Sätt_ersättarens_e-post": {
+                            "runAfter": {
+                              "Hämta_ersättare": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "390d28d9-b806-4651-9d2f-f2892eede671"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "varApproverEmail",
+                              "value": "@outputs('Hämta_ersättare')?['body/smo_epost']"
+                            }
+                          },
+                          "Sätt_ersättarens_id": {
+                            "runAfter": {
+                              "Sätt_ersättarens_e-post": [
+                                "Succeeded"
+                              ]
+                            },
+                            "metadata": {
+                              "operationMetadataId": "07a75177-a52a-4c9a-9b1b-305526503cfa"
+                            },
+                            "type": "SetVariable",
+                            "inputs": {
+                              "name": "varApproverId",
+                              "value": "@outputs('Hämta_ersättare')?['body/smo_personalid']"
+                            }
+                          }
+                        },
+                        "else": {
+                          "actions": {
+                            "Sätt_chefens_e-post_(reserv)": {
+                              "metadata": {
+                                "operationMetadataId": "a5e46c4e-173d-47b6-bce3-e05f00bbd0bf"
+                              },
+                              "type": "SetVariable",
+                              "inputs": {
+                                "name": "varApproverEmail",
+                                "value": "@outputs('Hämta_chef')?['body/smo_epost']"
+                              }
+                            },
+                            "Sätt_chefens_id_(reserv)": {
+                              "runAfter": {
+                                "Sätt_chefens_e-post_(reserv)": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "855ca2a1-7e90-4d80-9afc-a0848c1de7ee"
+                              },
+                              "type": "SetVariable",
+                              "inputs": {
+                                "name": "varApproverId",
+                                "value": "@outputs('Hämta_chef')?['body/smo_personalid']"
+                              }
+                            }
+                          }
+                        },
+                        "expression": {
+                          "not": {
+                            "equals": [
+                              "@outputs('Hämta_chef')?['body/_smo_ersattare_value']",
+                              "@null"
+                            ]
+                          }
+                        },
+                        "metadata": {
+                          "operationMetadataId": "1c5b1e3d-dcf3-4348-8541-c5f2c0ee0726"
+                        },
+                        "type": "If"
+                      }
+                    }
+                  },
+                  "expression": {
+                    "equals": [
+                      "@outputs('Hämta_chef')?['body/smo_tillganglig']",
+                      "@true"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "04f14679-d4a9-4b73-9ffc-1c5b309d699f"
+                  },
+                  "type": "If"
+                },
+                "Begär_godkännande": {
+                  "runAfter": {
+                    "Är_chefen_tillgänglig": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "dfa6a3d2-757c-4d2f-8ca0-5e6f1c1d523a"
+                  },
+                  "type": "OpenApiConnectionWebhook",
+                  "inputs": {
+                    "parameters": {
+                      "approvalType": "Basic",
+                      "WebhookApprovalCreationInput/title": "Semesteransökan från @{outputs('Hämta_sökande')?['body/smo_namn']}",
+                      "WebhookApprovalCreationInput/assignedTo": "@{variables('varApproverEmail')};",
+                      "WebhookApprovalCreationInput/details": "Period: @{formatDateTime(triggerOutputs()?['body/smo_startdatum'], 'yyyy-MM-dd')} - @{formatDateTime(triggerOutputs()?['body/smo_slutdatum'], 'yyyy-MM-dd')}\nKommentar: @{triggerOutputs()?['body/smo_kommentar']}",
+                      "WebhookApprovalCreationInput/enableNotifications": true,
+                      "WebhookApprovalCreationInput/enableReassignment": true
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals",
+                      "operationId": "StartAndWaitForAnApproval",
+                      "connectionName": "shared_approvals"
+                    }
+                  }
+                },
+                "Uppdatera_beslut": {
+                  "runAfter": {
+                    "Begär_godkännande": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "b89f7653-0136-4258-839e-7f940e2495ac"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "smo_semesteransokans",
+                      "recordId": "@triggerOutputs()?['body/smo_semesteransokanid']",
+                      "item/smo_ansokningsstatus": "@if(equals(outputs('Begär_godkännande')?['body/outcome'], 'Approve'), 951790002, 951790003)",
+                      "item/smo_beslutsdatum": "@formatDateTime(utcNow(), 'yyyy-MM-dd')",
+                      "item/smo_beslutskommentar": "@first(outputs('Begär_godkännande')?['body/responses'])?['comments']",
+                      "item/smo_Godkannare@odata.bind": "smo_personals(@{variables('varApproverId')})"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "Hämta_sökande": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Godkänn_automatiskt": {
+                    "metadata": {
+                      "operationMetadataId": "dcff01d6-6e5c-4fc1-9769-9d32741be764"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "entityName": "smo_semesteransokans",
+                        "recordId": "@triggerOutputs()?['body/smo_semesteransokanid']",
+                        "item/smo_ansokningsstatus": 951790002,
+                        "item/smo_beslutsdatum": "@formatDateTime(utcNow(), 'yyyy-MM-dd')",
+                        "item/smo_beslutskommentar": "Automatiskt godkänd: sökanden saknar chef."
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      }
+                    }
+                  },
+                  "Har_sökanden_en_ersättare": {
+                    "actions": {
+                      "Hämta_sökandes_ersättare": {
+                        "metadata": {
+                          "operationMetadataId": "250fc964-f554-4b4e-9d16-826ad4fa5ef2"
+                        },
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "parameters": {
+                            "entityName": "smo_personals",
+                            "recordId": "@outputs('Hämta_sökande')?['body/_smo_ersattare_value']"
+                          },
+                          "host": {
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                            "operationId": "GetItem",
+                            "connectionName": "shared_commondataserviceforapps"
+                          }
+                        }
+                      },
+                      "Meddela_ersättaren": {
+                        "runAfter": {
+                          "Hämta_sökandes_ersättare": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "OpenApiConnection",
+                        "inputs": {
+                          "parameters": {
+                            "emailMessage/To": "@outputs('Hämta_sökandes_ersättare')?['body/smo_epost']",
+                            "emailMessage/Subject": "Du är ersättare för @{outputs('Hämta_sökande')?['body/smo_namn']}",
+                            "emailMessage/Body": "<p class=\"editor-paragraph\">Hej!<br><br>@{outputs('Hämta_sökande')?['body/smo_namn']} har semester från @{formatDateTime(triggerOutputs()?['body/smo_startdatum'], 'yyyy-MM-dd')} till @{formatDateTime(triggerOutputs()?['body/smo_slutdatum'], 'yyyy-MM-dd')}.<br><br>Du är registrerad som ersättare och ansvarar för att täcka upp under perioden.</p>",
+                            "emailMessage/Importance": "Normal"
+                          },
+                          "host": {
+                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                            "operationId": "SendEmailV2",
+                            "connectionName": "shared_office365"
+                          }
+                        }
+                      }
+                    },
+                    "runAfter": {
+                      "Godkänn_automatiskt": [
+                        "Succeeded"
+                      ]
+                    },
+                    "else": {
+                      "actions": {}
+                    },
+                    "expression": {
+                      "and": [
+                        {
+                          "not": {
+                            "equals": [
+                              "@outputs('Hämta_sökande')?['body/_smo_ersattare_value']",
+                              "@null"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "464308f3-40d2-4b9c-a45a-48173fabf9f8"
+                    },
+                    "type": "If"
+                  }
+                }
+              },
+              "expression": {
+                "and": [
+                  {
+                    "not": {
+                      "equals": [
+                        "@outputs('Hämta_sökande')?['body/_smo_chef_value']",
+                        "@null"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "90b51f89-3e04-42b6-8c9c-23aa545fff7a"
+              },
+              "type": "If"
+            },
+            "Hämta_sökande": {
+              "metadata": {
+                "operationMetadataId": "36ec9962-498d-48a2-b713-36aa4d7d3ad9"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "smo_personals",
+                  "recordId": "@triggerOutputs()?['body/_smo_sokande_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "varApproverEmail": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e19244b3-af14-4b05-a796-02a664c875d6"
+          },
+          "type": "Scope"
+        },
+        "Catch": {
+          "actions": {
+            "Terminate": {
+              "runAfter": {
+                "Meddela_administratör": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "bfe6217e-0127-45ce-87ef-a3b97ff5d4cc"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed"
+              }
+            },
+            "Meddela_administratör": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "emailMessage/To": "@parameters('Semester-Administratörens e-post (smo_SemesterAdministratrensepost)')",
+                  "emailMessage/Subject": "Fel i flödet Semesteransökan - Godkännande",
+                  "emailMessage/Body": "<p class=\"editor-paragraph\">Ansökan: @{triggerOutputs()?['body/smo_ansokansnamn']}<br>Körning: @{concat('https://make.powerautomate.com/environments/', workflow()?['tags']?['environmentName'], '/flows/', workflow()?['name'], '/runs/', workflow()?['run']?['name'])}</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                  "operationId": "SendEmailV2",
+                  "connectionName": "shared_office365"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Try": [
+              "Failed",
+              "TimedOut"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "512e7a8d-3ee5-4de3-a928-aedc8f59c5e8"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{8484759d-8b1c-43e3-8ecf-237e936b2c1b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{084DA3EF-F146-467E-8089-7381A37957B5}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{6243046E-97F0-491F-95C3-D48BB849726B}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{24A16B47-AE17-4E6C-AAF5-DD6F19EA536F}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="smo_namn" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smo_Namn" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{55FD782C-4D96-4992-901C-B24766E86039}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a0bb6bf7-8713-46a3-9142-818d5d0b6e57}">
+                        <labels>
+                          <label description="E-post" languagecode="1033" />
+                        </labels>
+                        <control id="smo_epost" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="smo_epost" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4ca49bd4-6c58-468b-9a09-8be11560a719}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Namn" languagecode="1033" />
+                        </labels>
+                        <control id="smo_namn" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="smo_namn" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7398fdc0-a066-4212-84bf-37ee800d8e44}">
+                        <labels>
+                          <label description="Chef" languagecode="1033" />
+                        </labels>
+                        <control id="smo_chef" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="smo_chef" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{08f9b4c1-8ab2-4017-b04d-7f4e34470f86}">
+                        <labels>
+                          <label description="Ersättare" languagecode="1033" />
+                        </labels>
+                        <control id="smo_ersattare" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="smo_ersattare" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8ecf9f7a-8c68-4b7d-9b05-442cf610fdfc}">
+                        <labels>
+                          <label description="Tillgänglig" languagecode="1033" />
+                        </labels>
+                        <control id="smo_tillganglig" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="smo_tillganglig" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a6e5e644-8b54-4d07-bcd0-3c0dcb1532f4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Användarkonto" languagecode="1033" />
+                        </labels>
+                        <control id="smo_anvandarkonto" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smo_anvandarkonto" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{1e40c9ba-d6b3-4f63-b51b-1abb83eb3c1d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7533304d-ac99-4258-a1d4-41d5e10c1eb4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{5ddfdb52-72a8-4cee-b8c9-a946367861bf}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{170b5ba0-4044-4603-8d4e-ec9e3c9419ff}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{eac12a30-4fb3-47c4-96bf-9d7bc836f532}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{f4391d62-2840-4828-9458-dbad623d7d78}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{50d94e4f-46a3-4f5e-b607-46bfab315d2b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{eb5fa0f3-5be0-4db6-950e-430779e5ac3b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

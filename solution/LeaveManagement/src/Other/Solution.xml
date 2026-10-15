@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.26094.142" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26094.142" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26094.00146">
+  <SolutionManifest>
+    <UniqueName>LeaveManagement</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="LeaveManagement" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.2</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>SaraMoussa</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="SaraMoussa" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="SaraMoussa" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>smo</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>95179</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="contact" behavior="2" />
+      <RootComponent type="1" schemaName="msdyn_integratedsearchprovider" behavior="2" />
+      <RootComponent type="1" schemaName="smo_personal" behavior="0" />
+      <RootComponent type="1" schemaName="smo_semesteransokan" behavior="0" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="20" id="{115413fa-f0c2-f111-a05c-70a8a507ace5}" behavior="0" />
+      <RootComponent type="20" id="{f50d3e5a-efc2-f111-a05c-70a8a507ace5}" behavior="0" />
+      <RootComponent type="29" id="{4be008b4-dab7-f111-aaac-7ced8d458451}" behavior="0" />
+      <RootComponent type="300" schemaName="smo_minsemester_3b056" behavior="0" />
+      <RootComponent type="62" schemaName="smo_Semesterhantering" behavior="0" />
+      <RootComponent type="70" id="{0559fd6f-f7c2-f111-a05c-70a8a507ace5}" behavior="0" />
+      <RootComponent type="70" id="{2426b759-f7c2-f111-a05c-70a8a507ace5}" behavior="0" />
+      <RootComponent type="80" schemaName="smo_Semesterhantering" behavior="0" />
+      <RootComponent type="91" id="{d671a303-825a-4f65-b94b-4c19985181c7}" schemaName="LeaveManagement.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b78831d349c485c" behavior="0" />
+      <RootComponent type="92" id="{5734e028-a5c7-f111-a05c-70a8a507ace5}" behavior="0" />
+      <RootComponent type="92" id="{65677682-59c6-f111-a05c-70a8a507ace5}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_integratedsearchprovider" displayName="Integrated search provider" solution="msdynce_KnowledgeManagementPatch (9.0.26094.3005)">
+          <package appName="msdynce_KnowledgeManagement" version="9.0.26094.3005">msdynce_KnowledgeManagementAnchor (9.0.26094.3005)</package>
+        </Required>
+        <Dependent type="1" schemaName="msdyn_integratedsearchprovider" displayName="Integrated search provider" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="smo_leaveapprovalprocess" displayName="Leave approval process" solution="Active" />
+        <Dependent type="1" schemaName="smo_semesteransokan" displayName="Semesteransökan" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="adx_identity_logonenabled" displayName="Login Enabled" parentSchemaName="contact" parentDisplayName="Contact" solution="PowerPages_RuntimeCore (1.0.2609.1)">
+          <package appName="Power Pages Core Package" version="1.1.2609.272">PowerPages_Core (1.1.2609.272)</package>
+        </Required>
+        <Dependent type="2" schemaName="adx_identity_logonenabled" displayName="Login Enabled" parentSchemaName="contact" parentDisplayName="Contact" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="adx_identity_passwordhash" displayName="Password Hash" parentSchemaName="contact" parentDisplayName="Contact" solution="PowerPages_RuntimeCore (1.0.2609.1)">
+          <package appName="Power Pages Core Package" version="1.1.2609.272">PowerPages_Core (1.1.2609.272)</package>
+        </Required>
+        <Dependent type="2" schemaName="adx_identity_passwordhash" displayName="Password Hash" parentSchemaName="contact" parentDisplayName="Contact" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="isallowedbyipfirewall" displayName="To bypass IP firewall restriction on the user" parentSchemaName="systemuser" parentDisplayName="User" solution="msft_authenticationextensionmetadata (9.2.3532.1)">
+          <package appName="AuthenticationExtensionApp Package" version="9.2.3532.1">AuthenticationExtensionApp_Anchor (9.2.3532.1)</package>
+        </Required>
+        <Dependent type="2" schemaName="isallowedbyipfirewall" displayName="To bypass IP firewall restriction on the user" parentSchemaName="systemuser" parentDisplayName="User" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="msdyn_clientsecret" displayName="External search provider secret" parentSchemaName="msdyn_integratedsearchprovider" parentDisplayName="Integrated search provider" solution="msdynce_KnowledgeManagementPatch (9.0.26094.3005)">
+          <package appName="msdynce_KnowledgeManagement" version="9.0.26094.3005">msdynce_KnowledgeManagementAnchor (9.0.26094.3005)</package>
+        </Required>
+        <Dependent type="2" schemaName="msdyn_clientsecret" displayName="External search provider secret" parentSchemaName="msdyn_integratedsearchprovider" parentDisplayName="Integrated search provider" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="smo_Semesterhantering" displayName="Semesterhantering" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.27)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.27">PowerAppsAppFramework_Anchor (1.0.0.27)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=smo_Semesterhantering,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="smo_Semesterhantering" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="HeaderAndNavigationRefresh" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.27)" id.uniquename="HeaderAndNavigationRefresh">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.27">PowerAppsAppFramework_Anchor (1.0.0.27)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=smo_Semesterhantering,settingdefinitionid.uniquename=HeaderAndNavigationRefresh" id.parentappmoduleid.uniquename="smo_Semesterhantering" id.settingdefinitionid.uniquename="HeaderAndNavigationRefresh" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="m365copilotmodelappenabled" solution="msdyn_M365CopilotAppInfraSettings (9.2.0.5)" id.uniquename="m365copilotmodelappenabled">
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.5">msdyn_M365CopilotAppInfraSettings (9.2.0.5)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=smo_Semesterhantering,settingdefinitionid.uniquename=m365copilotmodelappenabled" id.parentappmoduleid.uniquename="smo_Semesterhantering" id.settingdefinitionid.uniquename="m365copilotmodelappenabled" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

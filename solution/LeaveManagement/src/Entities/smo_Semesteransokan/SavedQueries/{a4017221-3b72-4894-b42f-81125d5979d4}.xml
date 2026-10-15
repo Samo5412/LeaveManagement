@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{a4017221-3b72-4894-b42f-81125d5979d4}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="smo_ansokansnamn" select="1" icon="1" preview="1">
+        <row name="result" id="smo_semesteransokanid">
+          <cell name="smo_ansokansnamn" width="300" />
+          <cell name="smo_sokande" width="150" />
+          <cell name="smo_startdatum" width="102" />
+          <cell name="smo_slutdatum" width="100" />
+          <cell name="smo_ansokningsstatus" width="139" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="smo_semesteransokan">
+          <attribute name="smo_semesteransokanid" />
+          <attribute name="smo_ansokansnamn" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="smo_sokande" />
+          <attribute name="smo_startdatum" />
+          <attribute name="smo_slutdatum" />
+          <attribute name="smo_ansokningsstatus" />
+          <order attribute="smo_startdatum" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Semesteransökans" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

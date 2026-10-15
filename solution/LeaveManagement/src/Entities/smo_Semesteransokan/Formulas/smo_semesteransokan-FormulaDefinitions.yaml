@@ -1,0 +1,1 @@
+smo_antaldagar: =DateDiff(smo_startdatum, smo_slutdatum, TimeUnit.Days) + 1

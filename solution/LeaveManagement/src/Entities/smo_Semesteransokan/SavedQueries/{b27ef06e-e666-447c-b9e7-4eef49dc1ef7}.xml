@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{b27ef06e-e666-447c-b9e7-4eef49dc1ef7}</savedqueryid>
+    <layoutxml>
+      <grid name="smo_semesteransokans" jump="smo_ansokansnamn" select="1" icon="1" preview="1">
+        <row name="smo_semesteransokan" id="smo_semesteransokanid">
+          <cell name="smo_ansokansnamn" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="smo_semesteransokan">
+          <attribute name="smo_semesteransokanid" />
+          <attribute name="smo_ansokansnamn" />
+          <attribute name="createdon" />
+          <order attribute="smo_ansokansnamn" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Semesteransökan Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

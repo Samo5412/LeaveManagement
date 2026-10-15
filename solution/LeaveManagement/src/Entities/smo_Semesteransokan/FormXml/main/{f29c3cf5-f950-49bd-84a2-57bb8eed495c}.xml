@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{f29c3cf5-f950-49bd-84a2-57bb8eed495c}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{5BB973CC-B444-48C4-B152-299A7AF9ABB9}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{7BC45FB1-89DE-4299-BB1C-D5AC0635A196}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{F34F3ED1-5B1B-4AB8-AAD0-38FA8EDDD1D3}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="smo_ansokansnamn" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="smo_Ansokansnamn" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9025513F-4E89-4B3A-814E-8133936CC167}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b0e22831-db96-4eee-8764-8e501e9d3bcc}">
+                        <labels>
+                          <label description="Sökande" languagecode="1033" />
+                        </labels>
+                        <control id="smo_sokande" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="smo_sokande" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1f942942-ac8b-4541-9527-ca5d89219b54}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Startdatum" languagecode="1033" />
+                        </labels>
+                        <control id="smo_startdatum" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="smo_startdatum" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba5944c3-b34b-42da-86ea-943b0b0c2267}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Slutdatum" languagecode="1033" />
+                        </labels>
+                        <control id="smo_slutdatum" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="smo_slutdatum" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6a312f07-252e-44c8-876b-940205954de5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Kommentar" languagecode="1033" />
+                        </labels>
+                        <control id="smo_kommentar" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="smo_kommentar" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bcb8204d-004a-42ef-bb7c-a8318c149833}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ansökningsstatus" languagecode="1033" />
+                        </labels>
+                        <control id="smo_ansokningsstatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="smo_ansokningsstatus" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{99098baa-9f12-4102-8b68-a01a65af0b80}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Godkännare" languagecode="1033" />
+                        </labels>
+                        <control id="smo_godkannare" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="smo_godkannare" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cfe15cee-35d7-48d0-a0ae-831d032337b9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Beslutskommentar" languagecode="1033" />
+                        </labels>
+                        <control id="smo_beslutskommentar" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="smo_beslutskommentar" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{2ae60ff9-3ac2-4a87-a3c0-f4ae3cfb9105}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{9b7e5313-40f7-4757-8cd4-8d2373274d28}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{c1f416c7-6cb2-49ef-99d6-6995de97651c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0d36bdfa-8959-4318-bd5f-eb653a67a9bb}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{5926d83e-9ef7-4465-bb71-094ec31e61f9}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7c30bb6b-7f8c-4c8c-b4a0-7fdb867aeb2e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{b734afd9-f0b6-459c-9e66-ca72f66a6eb0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{39999688-ad71-46b8-996d-378347e7fe85}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

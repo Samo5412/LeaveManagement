@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>smo_minsemester_3b056</Name>
+  <AppVersion>2026-10-08T07:38:28Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.26094.8.0</CreatedByClientVersion>
+  <MinClientVersion>3.26094.8.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"20261005T104432Z-3.26091.9.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.26094.8","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","optimizedForTeamsMeeting":"false","showStatusBar":"false","isUnifiedRootApp":"false","m365CopilotSettingValue":"0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Min semester</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified","environmentVariableName":""}},"dataSources":{"Semesteransökans":{"entitySetName":"smo_semesteransokans","logicalName":"smo_semesteransokan"},"Personals":{"entitySetName":"smo_personals","logicalName":"smo_personal"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"smo_semesteransokan","componenttype":1},{"logicalname":"smo_personal","componenttype":1},{"logicalname":"systemuser","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/smo_minsemester_3b056_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/smo_minsemester_3b056_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/smo_minsemester_3b056_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>
